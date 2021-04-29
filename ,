@@ -1,0 +1,19 @@
+var numArray = [24, 8, 23, 32, 5, 62];
+numArray.sort(function (a, b) {
+  return a - b;
+});
+
+console.log(numArray);
+
+
+
+function insertHyphen(str) {
+  var strArr = str.split('');
+  var numArr = strArr.map(Number);
+  for(var i = 0; i < numArr.length; i++) {
+   if(numArr[i-1]%2===0 && numArr[i]%2===0) {
+        numArr.push('-');
+    }
+  }
+  return numArr.join('');
+}
