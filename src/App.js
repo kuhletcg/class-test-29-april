@@ -7,8 +7,8 @@ function App() {
   const [print, setPrint] = useState(false);
 
   function getNumber(val) {
-    console.warn(val.target.value.replace("_"));
-    setNumber(val.target.value.replace("_"));
+    console.warn(val.target.value.replace(/ /, "_"));
+    setNumber(val.target.value.replace(/ /, "_"));
     setPrint(false);
   }
 
