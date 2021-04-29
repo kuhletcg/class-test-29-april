@@ -3,17 +3,18 @@ import "./App.css";
 import React, { useState } from "react";
 
 function App() {
-  const [data, setNumber] = useState(null);
+  const [number, setNumber] = useState(null);
   const [print, setPrint] = useState(false);
 
   function getNumber(val) {
-    console.warn(val.target.value);
-    setNumber(val.target.value);
+    console.warn(val.target.value.replace("_"));
+    setNumber(val.target.value.replace("_"));
     setPrint(false);
   }
+
   return (
     <div className="App">
-      {print ? <h1> {data}</h1> : null}
+      {print ? <h1> {number}</h1> : null}
       <input type="text" onChange={getNumber} />
       <button onClick={() => setPrint(true)}>Print Number</button>
     </div>
